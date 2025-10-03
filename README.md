@@ -1,4 +1,4 @@
-# Validador de Formulário com JavaScript
+# Validação de Formulário com JavaScript
 
 ## Descrição
 
