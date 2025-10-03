@@ -9,6 +9,38 @@ class ValidaFormulario {
     this.formulario.addEventListener("submit", (e) => {
       this.handleSubmit(e);
     });
+
+    for (const campo of this.formulario.querySelectorAll('.validar')) {
+      campo.addEventListener('blur', (e) => {
+        this.handleFieldBlur(e.target);
+      });
+    }
+  }
+
+  handleFieldBlur(campo) {
+    // Remove previous error for this field
+    const errorText = campo.nextElementSibling;
+    if (errorText && errorText.classList.contains('error-text')) {
+      errorText.remove();
+    }
+
+    const label = campo.previousElementSibling.innerText;
+    if (!campo.value) {
+      this.criaErro(campo, `Campo "${label}" não pode estar em branco`);
+      return; // Stop validation if field is empty
+    }
+
+    if (campo.classList.contains("cpf")) {
+      this.validaCPF(campo);
+    }
+
+    if (campo.classList.contains("usuario")) {
+      this.validaUsusario(campo);
+    }
+
+    if (campo.classList.contains("senha") || campo.classList.contains("repetir-senha")) {
+      this.senhasSaoValidas();
+    }
   }
 
   handleSubmit(e) {
@@ -21,6 +53,13 @@ class ValidaFormulario {
     let valid = true;
     const senha = this.formulario.querySelector(".senha");
     const repetirSenha = this.formulario.querySelector(".repetir-senha");
+
+    // Clear previous errors for both fields
+    const errorSenha = senha.nextElementSibling;
+    if (errorSenha && errorSenha.classList.contains('error-text')) errorSenha.remove();
+    const errorRepetir = repetirSenha.nextElementSibling;
+    if (errorRepetir && errorRepetir.classList.contains('error-text')) errorRepetir.remove();
+
     if (senha.value !== repetirSenha.value) {
       valid = false;
       this.criaErro(senha, "Campos 'Senha' e repetir senha precisar ser iguais");
@@ -44,6 +83,7 @@ class ValidaFormulario {
       const label = campo.previousElementSibling.innerText;
       if (!campo.value) {
         this.criaErro(campo, `Campo "${label}" não pode estar em branco`);
+        valid = false;
       }
       if (campo.classList.contains("cpf")) {
         if (!this.validaCPF(campo)) valid = false;

@@ -2,9 +2,9 @@
 
 ## Descrição
 
-Este projeto é um validador de formulário desenvolvido com HTML, CSS e JavaScript puro. A aplicação é capaz de validar campos de um formulário de cadastro, exibindo mensagens de erro personalizadas para cada campo, caso as regras de validação não sejam atendidas. O projeto foi desenvolvido como parte do curso de JavaScript do professor Luiz Otávio Miranda, e tem como objetivo demonstrar a manipulação de eventos do formulário, a validação de campos com JavaScript e a utilização de classes para organizar o código.
+Este projeto é um validador de formulário desenvolvido com HTML, CSS e JavaScript puro. A aplicação é capaz de validar campos de um formulário de cadastro, exibindo mensagens de erro personalizadas para cada campo, caso as regras de validação não sejam atendidas. 
 
-## Demonstração ao Vivo
+## Demonstração 
 
 Você pode testar o formulário em funcionamento no seguinte link:
 
