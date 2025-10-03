@@ -1,10 +1,10 @@
-# Validador de Formulário com JavaScript
+# Validação de Formulário com JavaScript
 
 ## Descrição
 
-Este projeto é um validador de formulário desenvolvido com HTML, CSS e JavaScript puro. A aplicação é capaz de validar campos de um formulário de cadastro, exibindo mensagens de erro personalizadas para cada campo, caso as regras de validação não sejam atendidas. 
+Este projeto é um validador de formulário desenvolvido com HTML, CSS e JavaScript puro. A aplicação é capaz de validar campos de um formulário de cadastro, exibindo mensagens de erro personalizadas para cada campo, caso as regras de validação não sejam atendidas.
 
-## Demonstração 
+## Demonstração
 
 Você pode testar o formulário em funcionamento no seguinte link:
 
@@ -32,13 +32,17 @@ O formulário de cadastro possui as seguintes regras de validação:
 Para utilizar este projeto em sua máquina local, siga os passos abaixo:
 
 1. Clone o repositório para a sua máquina local:
+
 ```bash
 git clone https://github.com/camiloruas/javascript-form-validation.git
 ```
+
 2. Navegue até o diretório do projeto:
+
 ```bash
 cd javascript-form-validation
 ```
+
 3. Abra o arquivo `index.html` em seu navegador de preferência.
 
 ## Autor
