@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background-color: rgb(8, 72, 88);
+}
+
+.container {
+  height: 100%;
+  width: 750px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(231, 245, 245);
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+button {
+  margin: 20px;
+  height: 25px;
+  width: 80px;
+}
+input {
+  height: 25px;
+}
+
+label {
+  margin-top: 20px;
+}
+
+ul {
+  margin: 20px 0; /* espaço fora da lista*/
+  padding-left: 20px; /*recuo padrão da lista*/
+}
+
+ul li {
+  margin-bottom: 10px; /*espaço entre cada item*/
+  line-height: 1.5; /*aumenta a altura da linha (mais respiro)*/
+}
+
+.error-text {
+  padding: 4px;
+  /* margin-bottom: 20px; */
+  font-size: 12px;
+  color: rgb(245, 5, 5);
+}
+.div-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px; /* opcional, só para dar espaçamento */
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
