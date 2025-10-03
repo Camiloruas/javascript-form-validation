@@ -39,6 +39,12 @@ class ValidaFormulario {
     }
 
     if (campo.classList.contains("senha") || campo.classList.contains("repetir-senha")) {
+      const senha = this.formulario.querySelector('.senha');
+      const repetirSenha = this.formulario.querySelector('.repetir-senha');
+      const errorSenha = senha.nextElementSibling;
+      if (errorSenha && errorSenha.classList.contains('error-text')) errorSenha.remove();
+      const errorRepetir = repetirSenha.nextElementSibling;
+      if (errorRepetir && errorRepetir.classList.contains('error-text')) errorRepetir.remove();
       this.senhasSaoValidas();
     }
   }
@@ -54,12 +60,6 @@ class ValidaFormulario {
     const senha = this.formulario.querySelector(".senha");
     const repetirSenha = this.formulario.querySelector(".repetir-senha");
 
-    // Clear previous errors for both fields
-    const errorSenha = senha.nextElementSibling;
-    if (errorSenha && errorSenha.classList.contains('error-text')) errorSenha.remove();
-    const errorRepetir = repetirSenha.nextElementSibling;
-    if (errorRepetir && errorRepetir.classList.contains('error-text')) errorRepetir.remove();
-
     if (senha.value !== repetirSenha.value) {
       valid = false;
       this.criaErro(senha, "Campos 'Senha' e repetir senha precisar ser iguais");
@@ -70,6 +70,12 @@ class ValidaFormulario {
       valid = false;
       this.criaErro(senha, "Campo senha precisa estar entre 6 e 12 caracteres ");
     }
+
+    if (repetirSenha.value.length < 6 || repetirSenha.value.length > 18) {
+      valid = false;
+      this.criaErro(repetirSenha, "Campo repetir senha precisa estar entre 6 e 12 caracteres ");
+    }
+
     return valid;
   }
 
@@ -121,6 +127,10 @@ class ValidaFormulario {
   }
 
   criaErro(campo, msg) {
+    const errorText = campo.nextElementSibling;
+    if (errorText && errorText.classList.contains('error-text')) {
+      return;
+    }
     const div = document.createElement("div");
     div.innerHTML = msg;
     div.classList.add("error-text");
