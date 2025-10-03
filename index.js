@@ -53,7 +53,7 @@ class ValidaFormulario {
     e.preventDefault();
     const camposValidos = this.camposSaoValidos();
     const senhasValidas = this.senhasSaoValidas();
-    if (camposValidos && senhasValidas) alert("formulário foi Enviado!");
+    if (camposValidos && senhasValidas) alert("Formulário enviado com sucesso!");
   }
   senhasSaoValidas() {
     let valid = true;
@@ -62,18 +62,18 @@ class ValidaFormulario {
 
     if (senha.value !== repetirSenha.value) {
       valid = false;
-      this.criaErro(senha, "Campos 'Senha' e repetir senha precisar ser iguais");
-      this.criaErro(repetirSenha, "Campos 'Senha' e 'repetir senha' precisar ser iguais");
+      this.criaErro(senha, "Os campos 'Senha' e 'Repetir Senha' precisam ser iguais.");
+      this.criaErro(repetirSenha, "Os campos 'Senha' e 'Repetir Senha' precisam ser iguais.");
     }
 
     if (senha.value.length < 6 || senha.value.length > 18) {
       valid = false;
-      this.criaErro(senha, "Campo senha precisa estar entre 6 e 12 caracteres ");
+      this.criaErro(senha, "A senha precisa ter entre 6 e 12 caracteres.");
     }
 
     if (repetirSenha.value.length < 6 || repetirSenha.value.length > 18) {
       valid = false;
-      this.criaErro(repetirSenha, "Campo repetir senha precisa estar entre 6 e 12 caracteres ");
+      this.criaErro(repetirSenha, "A senha precisa ter entre 6 e 12 caracteres.");
     }
 
     return valid;
@@ -105,12 +105,12 @@ class ValidaFormulario {
     const usuario = campo.value;
     let valid = true;
     if (usuario.length < 3 || usuario.length > 20) {
-      this.criaErro(campo, "Usuario precisa ter entre 3 e 20 caracteres");
+      this.criaErro(campo, "O usuário precisa ter entre 3 e 20 caracteres.");
       valid = false;
     }
 
     if (!usuario.match(/^[a-zA-Z0-9]+$/g)) {
-      this.criaErro(campo, "Nome de usuário precisa conter somente letras e/ou números");
+      this.criaErro(campo, "O nome de usuário deve conter apenas letras e/ou números.");
       valid = false;
     }
 
